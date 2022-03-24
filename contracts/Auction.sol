@@ -35,6 +35,8 @@ contract Auction {
         require(sellerAddr == address(0), "Seller addres is not 0!");
         _;
     }
+
+    receive() external payable{}
     
     function makeBid() isBidable external payable {
         if (bidAddress != address(0)){
