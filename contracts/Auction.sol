@@ -30,9 +30,7 @@ contract Auction {
     }
 
     modifier isBeginable{
-        require(bidPrice == 0, "Bid price is not 0!");
-        require(bytes(currentLot).length == 0, "Current lot is not empty!");
-        require(sellerAddr == address(0), "Seller addres is not 0!");
+        require(bidPrice == 0 && bytes(currentLot).length == 0 && sellerAddr == address(0), "Auction is active!");
         _;
     }
 
